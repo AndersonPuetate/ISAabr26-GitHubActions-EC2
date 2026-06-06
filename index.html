@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Jonathan | Página principal</title>
+  <style>
+    /* ---------- RESET Y ESTILOS BASE ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #f8faff 0%, #eef2f9 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1.5rem;
+    }
+
+    /* contenedor principal con tarjeta elegante */
+    .main-card {
+      max-width: 880px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(0px);
+      border-radius: 2.5rem;
+      box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.25), 0 4px 12px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    .main-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 30px 50px -18px rgba(0, 0, 0, 0.3);
+    }
+
+    /* encabezado con color armónico */
+    .hero {
+      background: linear-gradient(135deg, #1c2a44 0%, #2c3e66 100%);
+      padding: 2rem 2rem 1.8rem;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* TITULO PRINCIPAL: "Jonathan" */
+    .titulo-jonathan {
+      font-size: 3.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: white;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      margin-bottom: 0.35rem;
+      word-break: keep-all;
+    }
+
+    /* subtítulo decorativo */
+    .subtitulo {
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: #cddcff;
+      border-top: 1px dashed rgba(255,255,240,0.3);
+      display: inline-block;
+      padding-top: 0.5rem;
+      margin-top: 0.25rem;
+    }
+
+    /* contenido principal */
+    .contenido {
+      padding: 2rem 2rem 2.2rem;
+    }
+
+    /* bio / texto de bienvenida */
+    .bio {
+      background: #f9fbfe;
+      border-radius: 1.8rem;
+      padding: 1.5rem 1.8rem;
+      margin-bottom: 2rem;
+      border-left: 6px solid #2c3e66;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02), inset 0 1px 0 white;
+    }
+
+    .bio p {
+      font-size: 1.08rem;
+      line-height: 1.5;
+      color: #1f2a44;
+      margin-bottom: 0.75rem;
+    }
+
+    .bio p:last-child {
+      margin-bottom: 0;
+    }
+
+    .bio strong {
+      color: #1e2f50;
+      font-weight: 600;
+    }
+
+    /* datos curiosos / sección extra */
+    .info-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .card-info {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 1.2rem 1rem;
+      flex: 1 1 180px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+      transition: all 0.2s;
+      border: 1px solid #e9edf4;
+    }
+
+    .card-info:hover {
+      border-color: #b9c4da;
+      transform: scale(1.01);
+      background: #ffffff;
+    }
+
+    .emoji {
+      font-size: 2rem;
+      margin-bottom: 0.6rem;
+      display: inline-block;
+    }
+
+    .card-info h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #1c2a44;
+      margin-bottom: 0.4rem;
+    }
+
+    .card-info p {
+      font-size: 0.9rem;
+      color: #4a5b7a;
+    }
+
+    /* pie de página elegante */
+    .pie {
+      background: #f0f3fa;
+      padding: 1.1rem 2rem;
+      text-align: center;
+      border-top: 1px solid #e2e8f2;
+      font-size: 0.85rem;
+      color: #3a4b6e;
+      font-weight: 500;
+    }
+
+    .pie a {
+      color: #2c3e66;
+      text-decoration: none;
+      border-bottom: 1px dotted #8d9fc9;
+    }
+
+    .pie a:hover {
+      color: #0f1a30;
+      border-bottom-style: solid;
+    }
+
+    /* ajustes responsive */
+    @media (max-width: 580px) {
+      body {
+        padding: 1rem;
+      }
+      .titulo-jonathan {
+        font-size: 2.5rem;
+      }
+      .hero {
+        padding: 1.5rem 1rem;
+      }
+      .contenido {
+        padding: 1.5rem;
+      }
+      .bio {
+        padding: 1rem 1.2rem;
+      }
+      .card-info h3 {
+        font-size: 1rem;
+      }
+      .info-grid {
+        gap: 0.8rem;
+      }
+    }
+
+    @media (max-width: 450px) {
+      .titulo-jonathan {
+        font-size: 2rem;
+      }
+      .subtitulo {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* decoración sutil */
+    .decoration {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      color: #8a9bc2;
+    }
+  </style>
+</head>
+<body>
+
+<div class="main-card">
+  <!-- SECCIÓN PRINCIPAL con el título JONATHAN -->
+  <div class="hero">
+    <h1 class="titulo-jonathan">Jonathan</h1>
+    <div class="subtitulo">✨ creatividad · desarrollo · visión ✨</div>
+  </div>
+
+  <!-- CONTENIDO CENTRAL -->
+  <div class="contenido">
+    <div class="bio">
+      <p>👋 <strong>Hola, soy Jonathan</strong> — un espacio dedicado a la pasión por el diseño web, el código limpio y las experiencias digitales memorables.</p>
+      <p>🌱 Esta página refleja mi enfoque minimalista pero cálido: <strong>html semántico + css moderno</strong> para crear interfaces que comunican desde el primer vistazo.</p>
+    </div>
+
+    <!-- Pequeña sección de intereses o datos -->
+    <div class="info-grid">
+      <div class="card-info">
+        <div class="emoji">💻</div>
+        <h3>Frontend</h3>
+        <p>HTML, CSS, JS · diseño responsivo</p>
+      </div>
+      <div class="card-info">
+        <div class="emoji">🎨</div>
+        <h3>Diseño UI</h3>
+        <p>Componentes claros & amigables</p>
+      </div>
+      <div class="card-info">
+        <div class="emoji">🌍</div>
+        <h3>Proyectos</h3>
+        <p>Webs accesibles y funcionales</p>
+      </div>
+    </div>
+
+    <div class="decoration">
+      ⚡ “código con propósito, diseño con corazón”
+    </div>
+  </div>
+
+  <div class="pie">
+    <span>© 2026 · Jonathan · </span>
+    <a href="#" aria-label="mi perfil (placeholder)">inspiración diaria</a>
+    <span> · construido con 🧡 y css puro</span>
+  </div>
+</div>
+
+</body>
+</html>
